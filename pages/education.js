@@ -4,7 +4,7 @@ import { useRouter } from 'next/router';
 
 export default function Education() {
   const [text, setText] = useState('');
-  const fullText = 'Education & Leadership';
+  const fullText = 'Education';
   const router = useRouter();
 
   useEffect(() => {
@@ -35,8 +35,8 @@ export default function Education() {
   return (
     <div style={styles.container}>
       <Head>
-        <title>Education & Leadership</title>
-        <meta name="description" content="Education & Leadership page" />
+        <title>Education</title>
+        <meta name="description" content="Education page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
 

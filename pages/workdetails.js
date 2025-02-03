@@ -94,6 +94,12 @@ export default function WorkDetails() {
             <div style={styles.toolbarItem}>
               ⭐ <span style={styles.toolbarLabel}>Star</span>
             </div>
+            <div style={styles.toolbarItem}>
+              📂 <span style={styles.toolbarLabel}>Move</span>
+            </div>
+            <div style={styles.toolbarItem}>
+              📭 <span style={styles.toolbarLabel}>Mark Unread</span>
+            </div>
           </div>
           <div style={styles.contentContainer}>
             <div style={styles.emailList}>
@@ -144,7 +150,6 @@ export default function WorkDetails() {
     </div>
   );
 }
-
 const styles = {
   container: {
     minHeight: '100vh',
@@ -271,3 +276,4 @@ const styles = {
     borderLeft: '1px solid #ccc',
   },
 };
+

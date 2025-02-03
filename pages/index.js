@@ -61,7 +61,9 @@ export default function Home() {
           <div style={{ ...styles.menu, width: '300%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
             <a href="/projects" style={{ ...styles.menuItem, textAlign: 'center' }}>Projects</a>
             <a href="/work" style={{ ...styles.menuItem, textAlign: 'center' }}>Work Experience</a>
-            <a href="/education" style={{ ...styles.menuItem, textAlign: 'center' }}>Education & Leadership</a>
+            <a href="/education" style={{ ...styles.menuItem, textAlign: 'center' }}>Education</a>
+            <a href="/leadership" style={{ ...styles.menuItem, textAlign: 'center' }}>Leadership</a>
+            <a href="/aboutme" style={{ ...styles.menuItem, textAlign: 'center' }}>About Me</a>
           </div>
         )}
       </div>
@@ -86,7 +88,7 @@ export default function Home() {
             <p>As an undergraduate, I worked as a software engineer intern at <a href="https://www.lockheedmartin.com/en-us/careers/why-lm/business-areas/eo.html" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Lockheed Martin</a>,
              a systems engineering <a href="https://www.nasa.gov/careers/pathways/" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Pathways Intern at NASA</a>, 
                 a legal and technical intern at <a href="https://martensonlaw.com/" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Martenson, Hasbrouck and Simon </a>
-                and a two-time data analytics co-op at <a href="https://news.delta.com/corporate-stats-and-facts" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Delta Air Lines</a>.</p>
+                and a three-time data analytics co-op at <a href="https://news.delta.com/corporate-stats-and-facts" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Delta Air Lines</a>.</p>
             <p>My academics were supplemented by multiple leadership positions including serving as President of the <a href="https://www.gtsaa.com/s/1481/alumni/17/home.aspx?gid=39&pgid=61" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Student Alumni Association </a>
                 and a Georgia Tech <a href="https://www.gtambassadors.org/s/1481/alumni/17/home.aspx?gid=44&pgid=61" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Student Ambassador</a>.</p>
             <p>Now, I am pursuing a Juris Doctor and a Masters in Computer Science in order to work 
