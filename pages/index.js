@@ -63,7 +63,7 @@ export default function Home() {
             <a href="/work" style={{ ...styles.menuItem, textAlign: 'center' }}>Work Experience</a>
             <a href="/education" style={{ ...styles.menuItem, textAlign: 'center' }}>Education</a>
             <a href="/leadership" style={{ ...styles.menuItem, textAlign: 'center' }}>Leadership</a>
-            <a href="/aboutme" style={{ ...styles.menuItem, textAlign: 'center' }}>About Me</a>
+            {/* <a href="/aboutme" style={{ ...styles.menuItem, textAlign: 'center' }}>About Me</a> */}
           </div>
         )}
       </div>
@@ -85,12 +85,12 @@ export default function Home() {
                  <span style={{color: '#27c93f', fontWeight: 'bold'}}> B.S. in Computer Science</span>, 
                 a <span style={{color: '#ffbd2e', fontWeight: 'bold'}}>minor in Law, Science, and Technology</span> 
                 and a <span style={{color: '#ff5f56', fontWeight: 'bold'}}>certificate in Entrepreneurship</span>.</p>
-            <p>As an undergraduate, I worked as a software engineer intern at <a href="https://www.lockheedmartin.com/en-us/careers/why-lm/business-areas/eo.html" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Lockheed Martin</a>,
-             a systems engineering <a href="https://www.nasa.gov/careers/pathways/" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Pathways Intern at NASA</a>, 
-                a legal and technical intern at <a href="https://martensonlaw.com/" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Martenson, Hasbrouck and Simon </a>
-                and a three-time data analytics co-op at <a href="https://news.delta.com/corporate-stats-and-facts" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Delta Air Lines</a>.</p>
-            <p>My academics were supplemented by multiple leadership positions including serving as President of the <a href="https://www.gtsaa.com/s/1481/alumni/17/home.aspx?gid=39&pgid=61" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Student Alumni Association </a>
-                and a Georgia Tech <a href="https://www.gtambassadors.org/s/1481/alumni/17/home.aspx?gid=44&pgid=61" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>Student Ambassador</a>.</p>
+            <p>As an undergraduate, I worked as a software engineer intern at <a href="https://www.lockheedmartin.com/en-us/careers/why-lm/business-areas/eo.html" target="_blank" rel="noopener noreferrer" style={{color: 'black', transition: 'transform 0.3s', display: 'inline-block'}} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>Lockheed Martin</a>,
+             a systems engineering <a href="https://www.nasa.gov/careers/pathways/" target="_blank" rel="noopener noreferrer" style={{color: 'black', transition: 'transform 0.3s', display: 'inline-block'}} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>Pathways Intern at NASA</a>, 
+                a legal and technical intern at <a href="https://martensonlaw.com/" target="_blank" rel="noopener noreferrer" style={{color: 'black', transition: 'transform 0.3s', display: 'inline-block'}} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>Martenson, Hasbrouck and Simon</a> 
+                &nbsp;and a three-time data analytics co-op at <a href="https://news.delta.com/corporate-stats-and-facts" target="_blank" rel="noopener noreferrer" style={{color: 'black', transition: 'transform 0.3s', display: 'inline-block'}} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>Delta Air Lines</a>.&nbsp;</p>
+            <p>My academics were supplemented by multiple leadership positions including serving as President of the <a href="https://www.gtsaa.com/s/1481/alumni/17/home.aspx?gid=39&pgid=61" target="_blank" rel="noopener noreferrer" style={{color: 'black', transition: 'transform 0.3s', display: 'inline-block'}} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>Student Alumni Association </a>
+                and a Georgia Tech <a href="https://www.gtambassadors.org/s/1481/alumni/17/home.aspx?gid=44&pgid=61" target="_blank" rel="noopener noreferrer" style={{color: 'black', transition: 'transform 0.3s', display: 'inline-block'}} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>Student Ambassador</a>.</p>
             <p>Now, I am pursuing a Juris Doctor and a Masters in Computer Science in order to work 
               towards my goal of integrating my technical skills with legal knowledge to
               create innovative solutions to complex and modern problems.</p>
@@ -99,11 +99,15 @@ export default function Home() {
             <span style={{color: '#ff5f56', fontWeight: 'bold'}}> education and leadership positions</span>.</p>
             Sincerely,<br />
             Katherine (Katy) Dickenson<br />
-            <a href="https://www.linkedin.com/in/katherinedickenson/" target="_blank" rel="noopener noreferrer" style={{color: 'black'}}>LinkedIn</a>
-            <div style={{ marginTop: '2px' }}>
-              <a href="/KDickenson_Resume.pdf" download style={styles.attachment}>
+            <a href="https://www.linkedin.com/in/katherinedickenson/" target="_blank" rel="noopener noreferrer" style={{color: 'black', transition: 'transform 0.3s', display: 'inline-block'}} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>LinkedIn</a>
+            <div style={{ marginTop: '2px', display: 'flex', gap: '10px' }}>
+              <a href="/KDickenson_Resume.pdf" download style={{ ...styles.attachment, transition: 'transform 0.3s', display: 'inline-block' }} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>
                 📎 1 Attachment<br />
-                <span style={styles.resumeText}>KDickenson_Resume.pdf</span>
+                <span style={styles.resumeText}>KDickenson Resume.pdf</span>
+              </a>
+              <a href="/KDickenson_CoverLetter.pdf" download style={{ ...styles.attachment, transition: 'transform 0.3s', display: 'inline-block' }} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>
+                📎 1 Attachment<br />
+                <span style={styles.resumeText}>Cover Letter.pdf</span>
               </a>
             </div>
           </div>
