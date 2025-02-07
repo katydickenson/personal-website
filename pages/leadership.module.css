@@ -257,7 +257,23 @@
 .cardBack {
   background: #f8f9fa;
   transform: rotateY(180deg);
-  overflow-y: auto;
+  overflow-y: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: #888 #f8f9fa;
+}
+
+.cardBack::-webkit-scrollbar {
+  width: 8px;
+}
+
+.cardBack::-webkit-scrollbar-track {
+  background: #f8f9fa;
+}
+
+.cardBack::-webkit-scrollbar-thumb {
+  background-color: #888;
+  border-radius: 10px;
+  border: 2px solid #f8f9fa;
 }
 
 .orgTitle {
