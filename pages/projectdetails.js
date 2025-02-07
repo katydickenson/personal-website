@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
-import styles from './projectdetails.module.css'; // Import CSS module
+import styles from './projectdetails.module.css';
 
 export default function ProjectDetails() {
   const router = useRouter();
@@ -41,7 +41,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('spotify')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.spotify ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Fall 2024</h4>
                 <h3 className={styles.company}>Spotify Wrapped</h3>
@@ -60,7 +59,6 @@ export default function ProjectDetails() {
                 </a>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   A Django-based web application that interfaces with the Spotify Web API to create personalized music analytics. 
@@ -77,7 +75,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('atlanta')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.atlanta ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Fall 2024</h4>
                 <h3 className={styles.company}>Atlanta Food Finder</h3>
@@ -96,7 +93,6 @@ export default function ProjectDetails() {
                 </a>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   A Django-based web application that integrates with the Google Maps API to create an interactive food discovery platform for Atlanta. 
@@ -115,7 +111,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('cancellations')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.cancellations ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Summer 2024</h4>
                 <h3 className={styles.company}>Cancellations Dashboard</h3>
@@ -125,7 +120,6 @@ export default function ProjectDetails() {
                 </p>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Developed an interactive Power BI dashboard analyzing airline performance metrics across carriers. 
@@ -141,7 +135,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('delay')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.delay ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Summer 2024</h4>
                 <h3 className={styles.company}>Delay Assessment</h3>
@@ -151,7 +144,6 @@ export default function ProjectDetails() {
                 </p>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Analyzed a network-wide flight delay pattern affecting multiple routes, identifying two hub airports as the root cause. 
@@ -171,7 +163,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('gameboy')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.gameboy ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Spring 2024</h4>
                 <h3 className={styles.company}>Mini Gameboy Game</h3>
@@ -190,7 +181,6 @@ export default function ProjectDetails() {
                 </a>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Developed a mini Game Boy emulator in C featuring a custom arcade-style game. 
@@ -208,7 +198,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('taxi')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.taxi ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Fall 2023</h4>
                 <h3 className={styles.company}>Taxi Time Predictor</h3>
@@ -218,7 +207,6 @@ export default function ProjectDetails() {
                 </p>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Developed a predictive model using SQL and Python to forecast aircraft taxi times 
@@ -239,7 +227,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('optimization')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.optimization ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Summer 2023</h4>
                 <h3 className={styles.company}>Client Data Optimization</h3>
@@ -249,7 +236,6 @@ export default function ProjectDetails() {
                 </p>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Engineered a Python script that processes and analyzes client data sets, implementing an optimized matching algorithm 
@@ -265,7 +251,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('security')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.security ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Spring 2023</h4>
                 <h3 className={styles.company}>Security Risk Assessment</h3>
@@ -275,7 +260,6 @@ export default function ProjectDetails() {
                 </p>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Developed comprehensive software security analysis for NASA, evaluating unauthorized external downloads against 
@@ -295,7 +279,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('brain')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.brain ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Fall 2022</h4>
                 <h3 className={styles.company}>Brain Trauma Assessment Protocols</h3>
@@ -314,7 +297,6 @@ export default function ProjectDetails() {
                 </a>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Developed iOS application using Swift and SpriteKit to assist aphasia patients with speech rehabilitation. 
@@ -330,7 +312,6 @@ export default function ProjectDetails() {
             onClick={() => toggleFlip('hoppr')}
           >
             <div className={styles.cardInner} style={{ transform: flipped.hoppr ? 'rotateY(180deg)' : 'rotateY(0)' }}>
-              {/* Front of card */}
               <div className={styles.cardFront}>
                 <h4 className={styles.date}>Summer 2022</h4>
                 <h3 className={styles.company}>Hoppr</h3>
@@ -349,7 +330,6 @@ export default function ProjectDetails() {
                 </a>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
-              {/* Back of card */}
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Assisted in the development of open-source containerization tool Hoppr, focusing on cross-environment 
