@@ -5,25 +5,34 @@ import styles from './leadership.module.css';
 
 const LeadershipDetails = () => {
   const router = useRouter();
-  const [selectedOrg, setSelectedOrg] = useState(null);
-  const [currentPosition, setCurrentPosition] = useState(0);
+  const [flippedCards, setFlippedCards] = useState(new Set());
 
-  const handleOrgClick = (orgIndex) => {
-    setSelectedOrg(selectedOrg === orgIndex ? null : orgIndex);
-    setCurrentPosition(0); // Reset position index when selecting new org
+  const handleCardClick = (index) => {
+    setFlippedCards(prev => {
+      const newSet = new Set(prev);
+      if (newSet.has(index)) {
+        newSet.delete(index);
+      } else {
+        newSet.add(index);
+      }
+      return newSet;
+    });
   };
 
-  const handleNextPosition = () => {
-    if (selectedOrg !== null && currentPosition < leadershipData[selectedOrg].positions.length - 1) {
-      setCurrentPosition(curr => curr + 1);
-    }
-  };
-
-  const handlePrevPosition = () => {
-    if (selectedOrg !== null && currentPosition > 0) {
-      setCurrentPosition(curr => curr - 1);
-    }
-  };
+  // Sort positions by start date
+  const sortedPositions = leadershipData.flatMap(org => 
+    org.positions.map(pos => ({
+      ...pos,
+      organization: org.organization,
+      location: org.location,
+      startDate: pos.date.split('–')[0].trim()  // Extract start date
+    }))
+  ).sort((a, b) => {
+    // Convert dates to comparable format (assuming format "MMM YYYY")
+    const dateA = new Date(a.startDate);
+    const dateB = new Date(b.startDate);
+    return dateB - dateA;  // Sort in descending order (most recent first)
+  });
 
   return (
     <div className={styles.container}>
@@ -40,34 +49,35 @@ const LeadershipDetails = () => {
       <main className={styles.main}>
         <h1 className={styles.title}>Leadership Experience</h1>
         
-        <div className={styles.cardContainer}>
-          {leadershipData.map((org, index) => (
-            <div key={index} className={styles.orgSection}>
-              <div 
-                className={`${styles.orgCard} ${selectedOrg === index ? styles.selected : ''}`}
-                onClick={() => handleOrgClick(index)}
+        <div className={styles.timeline}>
+          <div className={styles.timelineLine} />
+          <div className={styles.timelineContainer}>
+            {sortedPositions.map((position, index) => (
+              <div
+                key={index}
+                className={`${styles.timelineCard} 
+                            ${flippedCards.has(index) ? styles.flipped : ''} 
+                            ${index % 2 === 0 ? styles.above : styles.below}`}
+                onClick={() => handleCardClick(index)}
               >
-                <h2 className={styles.orgTitle}>{org.organization}</h2>
-                <p className={styles.location}>{org.location}</p>
-              </div>
-
-              {selectedOrg === index && (
-                <div className={styles.positionsContainer}>
-                  {org.positions.map((position, posIndex) => (
-                    <div key={posIndex} className={styles.positionCard}>
-                      <h3 className={styles.positionTitle}>{position.title}</h3>
-                      <p className={styles.date}>{position.date}</p>
-                      <ul className={styles.responsibilities}>
-                        {position.responsibilities.map((resp, respIndex) => (
-                          <li key={respIndex}>{resp}</li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
+                <div className={styles.cardInner}>
+                  <div className={styles.cardFront}>
+                    <h2 className={styles.orgTitle}>{position.organization}</h2>
+                    <h3 className={styles.position}>{position.title}</h3>
+                    <p className={styles.location}>{position.location}</p>
+                    <span className={styles.timelineDate}>{position.date}</span>
+                  </div>
+                  <div className={styles.cardBack}>
+                    <ul className={styles.responsibilities}>
+                      {position.responsibilities.map((resp, idx) => (
+                        <li key={idx}>{resp}</li>
+                      ))}
+                    </ul>
+                  </div>
                 </div>
-              )}
-            </div>
-          ))}
+              </div>
+            ))}
+          </div>
         </div>
       </main>
     </div>

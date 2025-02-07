@@ -94,7 +94,7 @@ export default function Home() {
             <p>Now, I am pursuing a Juris Doctor and a Masters in Computer Science in order to work 
               towards my goal of integrating my technical skills with legal knowledge to
               create innovative solutions to complex and modern problems.</p>
-            <p>Browse to learn more about my <span style={{color: '#27c93f', fontWeight: 'bold'}}> projects</span>,
+            <p>Click the tab in the top right corner to learn more about my <span style={{color: '#27c93f', fontWeight: 'bold'}}> projects</span>,
              <span style={{color: '#ffbd2e', fontWeight: 'bold'}}> work experience</span>, 
             <span style={{color: '#ff5f56', fontWeight: 'bold'}}> education and leadership positions</span>.</p>
             Sincerely,<br />
@@ -105,10 +105,10 @@ export default function Home() {
                 📎 1 Attachment<br />
                 <span style={styles.resumeText}>KDickenson Resume.pdf</span>
               </a>
-              <a href="/KDickenson_CoverLetter.pdf" download style={{ ...styles.attachment, transition: 'transform 0.3s', display: 'inline-block' }} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>
+              {/* <a href="/KDickenson_CoverLetter.pdf" download style={{ ...styles.attachment, transition: 'transform 0.3s', display: 'inline-block' }} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>
                 📎 1 Attachment<br />
                 <span style={styles.resumeText}>Cover Letter.pdf</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

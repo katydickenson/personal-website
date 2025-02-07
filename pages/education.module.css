@@ -3,8 +3,8 @@
   margin: 0 auto;
   padding: 15px;
   position: relative;
-  height: 94vh;
-  overflow: hidden;
+  min-height: 94vh;
+  overflow-y: auto;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -39,6 +39,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+  overflow-y: auto;
 }
 
 .section {
@@ -74,8 +75,10 @@
   background-color: #fff9c4;
   flex: 2;
   border-left: 5px solid #fbc02d;
-  height: 323px;
-  overflow: hidden;
+  min-height: 300px;
+  height: auto;
+  overflow-y: auto;
+  width: 60%;
 }
 
 .awardsSection .date {
@@ -86,8 +89,10 @@
   background-color: #ffebee;
   flex: 1;
   border-left: 5px solid #e57373;
-  height: calc(100% - 5rem);
-  overflow: hidden;
+  min-height: 300px;
+  height: auto;
+  overflow-y: auto;
+  width: 35%;
 }
 
 .classesSection .date {
@@ -146,6 +151,7 @@
 .flexContainer {
   display: flex;
   gap: 15px;
+  justify-content: space-between;
 }
 
 .education-container {

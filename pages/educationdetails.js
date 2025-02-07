@@ -33,7 +33,7 @@ const EducationDetails = () => {
           <section className={`${styles.section} ${styles.graduationSection}`}>
             <h2 className={styles.sectionTitle}>Graduation</h2>
             <div className={styles.sectionContent}>
-              <p>Expected Graduation Date: May 2025</p>
+              <p>Graduation Date: May 2025</p>
               <p>Graduation Status: Highest Honors</p>
             </div>
           </section>

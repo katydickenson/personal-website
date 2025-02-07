@@ -1,9 +1,11 @@
 .container {
-  max-width: 1200px;
+  max-width: 100%;
+  width: 100%;  /* Ensure full width */
   margin: 0 auto;
-  padding: 20px;
+  padding: 0;
   position: relative;
-  min-height: 100vh;
+  min-height: 100vh;  /* Ensure full viewport height */
+  overflow: visible;  /* Allow content to be visible */
 }
 
 .backButton {
@@ -33,12 +35,13 @@
 .cardContainer {
   display: flex;
   flex-direction: column;
-  gap: 20px;
+  gap: 0;  /* Remove any gap */
+  width: 100%;  /* Ensure full width */
 }
 
 .orgSection {
   display: flex;
-  gap: 20px;
+  gap: 0px;
   transition: all 0.3s ease;
   width: 100%;
 }
@@ -115,7 +118,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 20px;
+  gap: 0px;
   margin-top: 10px;
 }
 
@@ -150,26 +153,166 @@
 
 /* Add spacing for unselected cards */
 .orgSection:not(.selectedSection) {
-  margin-top: 20px;
+  margin-top: 5px;
   transition: margin-top 0.5s ease;
 }
 
 .selectedSection + .orgSection {
-  margin-top: 200px; /* Adjust based on your content height */
+  margin-top: 5px; /* Adjust based on your content height */
 }
 
 .positionsContainer {
   display: flex;
-  gap: 20px;
-  overflow-x: auto;
-  padding: 10px;
+  gap: 0;  /* Remove any gap */
+  overflow-x: hidden;  /* Prevent overflow */
+  padding: 0;  /* Remove padding */
+  width: 100%;  /* Ensure full width */
 }
 
 .positionCard {
   background-color: #fff;
   border-radius: 10px;
+  padding: 5px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  flex: 1;  /* Allow card to expand */
+  min-width: 0;  /* Allow card to shrink if needed */
+  width: 100%;  /* Ensure full width */
+}
+
+.timeline {
+  position: relative;
+  margin: 120px auto;
+  width: 100%;
+  max-width: 1200px;
+  overflow: visible;  /* Allow content to be visible */
+}
+
+/* The horizontal line */
+.timelineLine {
+  position: absolute;
+  top: 87%;  /* Move the line further down */
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: #2c3e50;
+}
+
+.timelineContainer {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  padding: 0;  /* Remove padding */
+  margin: 0;   /* Remove margin */
+  gap: 5px;    /* Set gap to 5 pixels */
+  width: 100%;
+  overflow: visible;
+}
+
+.timelineCard {
+  position: relative;
+  flex: 1;
+  height: 300px;
+  width: 400px;
+  perspective: 1000px;
+  cursor: pointer;
+  margin: 0;  /* Ensure no margin */
+  flex-shrink: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: visible;
+}
+
+.cardInner {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  transform-style: preserve-3d;
+  transition: transform 0.6s ease-out;
+  transform-origin: center center; /* Ensure flipping occurs in the center */
+}
+
+.timelineCard.flipped .cardInner {
+  transform: rotateY(180deg);
+}
+
+.cardFront, .cardBack {
+  position: absolute;
+  width: 100%; /* Match the parent width */
+  height: 100%; /* Match the parent height */
+  backface-visibility: hidden;
+  border-radius: 10px;
   padding: 20px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  min-width: 300px;
-  flex: 1;
+}
+
+.cardFront {
+  background: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.cardBack {
+  background: #f8f9fa;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+.orgTitle {
+  font-size: 1.5rem;
+  color: #2c3e50;
+  margin-bottom: 10px;
+}
+
+.position {
+  font-size: 1.2rem;
+  color: #34495e;
+  font-style: italic;
+  margin-bottom: 5px;
+}
+
+.location {
+  color: #7f8c8d;
+}
+
+.responsibilities {
+  list-style-type: disc;
+  padding-left: 20px;
+  color: #555;
+}
+
+/* Adjust the vertical positioning of cards */
+.timelineCard.above {
+  transform: translateY(290px);  /* Move cards further from the line */
+}
+
+.timelineCard.below {
+  transform: translateY(-100px);  /* Move cards further from the line */
+}
+
+/* Adjust connecting lines */
+.timelineCard.above::after {
+  content: '';
+  position: absolute;
+  top: -40px;  /* Adjust to reach the timeline */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 40px;  /* Extend the line */
+  background-color: #2c3e50;
+}
+
+.timelineCard.below::after {
+  content: '';
+  position: absolute;
+  bottom: -70px;  /* Adjust to reach the timeline */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  height: 30px;  /* Extend the line */
+  background-color: #2c3e50;
 } 
