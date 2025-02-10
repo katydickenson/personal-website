@@ -1,6 +1,7 @@
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
+import TaskBar from '../components/TaskBar';
 
 export default function WorkDetails() {
   const router = useRouter();
@@ -66,6 +67,8 @@ export default function WorkDetails() {
         <meta name="description" content="Work Experience page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <TaskBar />
 
       <button style={styles.backButton} onClick={() => router.push('/')}>
         &larr; Back
@@ -181,12 +184,10 @@ const styles = {
     width: '100%',
   },
   title: {
-    margin: '1rem 0',
-    lineHeight: 1.15,
-    fontSize: '4rem',
+    fontSize: '3rem',
     textAlign: 'center',
-    display: 'flex',
-    alignItems: 'center',
+    margin: '40px 0',
+    color: '#2c3e50',
   },
   inboxContainer: {
     display: 'flex',

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import styles from './leadership.module.css';
+import TaskBar from '../components/TaskBar';
 
 const LeadershipDetails = () => {
   const router = useRouter();
@@ -19,19 +20,17 @@ const LeadershipDetails = () => {
     });
   };
 
-  // Sort positions by start date
   const sortedPositions = leadershipData.flatMap(org => 
     org.positions.map(pos => ({
       ...pos,
       organization: org.organization,
       location: org.location,
-      startDate: pos.date.split('–')[0].trim()  // Extract start date
+      startDate: pos.date.split('–')[0].trim()
     }))
   ).sort((a, b) => {
-    // Convert dates to comparable format (assuming format "MMM YYYY")
     const dateA = new Date(a.startDate);
     const dateB = new Date(b.startDate);
-    return dateB - dateA;  // Sort in descending order (most recent first)
+    return dateB - dateA;
   });
 
   return (
@@ -42,9 +41,7 @@ const LeadershipDetails = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <button className={styles.backButton} onClick={() => router.push('/')}>
-        &larr; Back
-      </button>
+      <TaskBar />
 
       <main className={styles.main}>
         <h1 className={styles.title}>Leadership Experience</h1>
@@ -62,6 +59,9 @@ const LeadershipDetails = () => {
               >
                 <div className={styles.cardInner}>
                   <div className={styles.cardFront}>
+                    <div className={styles.flipPrompt}>
+                      Click to see details <span style={{ marginLeft: '0.2rem' }}>↻</span>
+                    </div>
                     <h2 className={styles.orgTitle}>{position.organization}</h2>
                     <h3 className={styles.position}>{position.title}</h3>
                     <p className={styles.location}>{position.location}</p>

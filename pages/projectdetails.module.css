@@ -22,19 +22,17 @@
   .main {
     width: 100%;
     max-width: 1200px;
-    padding: 2rem;
+    padding: 0rem 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
   }
   
   .title {
-    margin: 1rem 0;
-    line-height: 1.15;
-    font-size: 4rem;
+    font-size: 3rem;
     text-align: center;
-    display: flex;
-    align-items: center;
+    margin: 59px 0;
+    color: #2c3e50;
   }
   
   .subtitle {
@@ -52,6 +50,7 @@
     padding: 2rem;
     justify-items: center;
     justify-content: center;
+    margin-top: 0rem;
   }
   
   .card {

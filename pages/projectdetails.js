@@ -2,6 +2,7 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useState } from 'react';
 import styles from './projectdetails.module.css';
+import TaskBar from '../components/TaskBar';
 
 export default function ProjectDetails() {
   const router = useRouter();
@@ -29,6 +30,8 @@ export default function ProjectDetails() {
         <meta name="description" content="Project Details page" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      <TaskBar />
 
       <button className={styles.backButton} onClick={() => router.push('/')}>
         &larr; Back
@@ -330,6 +333,7 @@ export default function ProjectDetails() {
                 </a>
                 <div className={styles.flipPrompt}>Click to see details ↻</div>
               </div>
+
               <div className={styles.cardBack}>
                 <p className={styles.projectInfo}>
                   Assisted in the development of open-source containerization tool Hoppr, focusing on cross-environment 

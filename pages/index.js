@@ -1,9 +1,9 @@
 import Head from 'next/head';
 import { useEffect, useState } from 'react';
+import TaskBar from '../components/TaskBar';  
 
 export default function Home() {
   const [text, setText] = useState('');
-  const [menuVisible, setMenuVisible] = useState(false);
   const fullText = 'Katherine Dickenson';
 
   useEffect(() => {
@@ -46,27 +46,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div
-        style={styles.menuContainer}
-        onMouseEnter={() => setMenuVisible(true)}
-        onMouseLeave={() => setMenuVisible(false)}
-        onClick={() => setMenuVisible(!menuVisible)}
-      >
-        <div style={styles.menuIcon}>
-          <div style={styles.bar}></div>
-          <div style={styles.bar}></div>
-          <div style={styles.bar}></div>
-        </div>
-        {(menuVisible || menuVisible) && (
-          <div style={{ ...styles.menu, width: '300%', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
-            <a href="/projects" style={{ ...styles.menuItem, textAlign: 'center' }}>Projects</a>
-            <a href="/work" style={{ ...styles.menuItem, textAlign: 'center' }}>Work Experience</a>
-            <a href="/education" style={{ ...styles.menuItem, textAlign: 'center' }}>Education</a>
-            <a href="/leadership" style={{ ...styles.menuItem, textAlign: 'center' }}>Leadership</a>
-            {/* <a href="/aboutme" style={{ ...styles.menuItem, textAlign: 'center' }}>About Me</a> */}
-          </div>
-        )}
-      </div>
+      <TaskBar />  
 
       <main style={styles.main}>
         <h1 style={styles.title}>
@@ -94,7 +74,7 @@ export default function Home() {
             <p>Now, I am pursuing a Juris Doctor and a Masters in Computer Science in order to work 
               towards my goal of integrating my technical skills with legal knowledge to
               create innovative solutions to complex and modern problems.</p>
-            <p>Click the tab in the top right corner to learn more about my <span style={{color: '#27c93f', fontWeight: 'bold'}}> projects</span>,
+            <p>Select a tab above to learn more about my <span style={{color: '#27c93f', fontWeight: 'bold'}}> projects</span>,
              <span style={{color: '#ffbd2e', fontWeight: 'bold'}}> work experience</span>, 
             <span style={{color: '#ff5f56', fontWeight: 'bold'}}> education and leadership positions</span>.</p>
             Sincerely,<br />
@@ -105,10 +85,6 @@ export default function Home() {
                 📎 1 Attachment<br />
                 <span style={styles.resumeText}>KDickenson Resume.pdf</span>
               </a>
-              {/* <a href="/KDickenson_CoverLetter.pdf" download style={{ ...styles.attachment, transition: 'transform 0.3s', display: 'inline-block' }} onMouseEnter={(e) => e.target.style.transform = 'scale(1.03)'} onMouseLeave={(e) => e.target.style.transform = 'scale(1)'}>
-                📎 1 Attachment<br />
-                <span style={styles.resumeText}>Cover Letter.pdf</span>
-              </a> */}
             </div>
           </div>
         </div>
@@ -129,40 +105,6 @@ const styles = {
     width: '100%',
     position: 'relative',
   },
-  menuContainer: {
-    position: 'absolute',
-    top: '1rem',
-    right: '1rem',
-    textAlign: 'right',
-    cursor: 'pointer',
-  },
-  menuIcon: {
-    display: 'inline-block',
-    padding: '0.5rem',
-  },
-  bar: {
-    width: '35px',
-    height: '5px',
-    backgroundColor: '#333',
-    margin: '6px 0',
-  },
-  menu: {
-    position: 'absolute',
-    top: '3rem',
-    right: '0',
-    backgroundColor: '#fff',
-    border: '1px solid #ccc',
-    borderRadius: '8px',
-    boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
-    zIndex: 1000,
-  },
-  menuItem: {
-    display: 'block',
-    padding: '0.5rem 1rem',
-    color: '#333',
-    textDecoration: 'none',
-    borderBottom: '1px solid #eee',
-  },
   main: {
     padding: '2rem 0',
     flex: 1,
@@ -171,6 +113,7 @@ const styles = {
     justifyContent: 'flex-start',
     alignItems: 'center',
     width: '100%',
+    marginTop: '60px',  
   },
   title: {
     margin: '1rem 0',
